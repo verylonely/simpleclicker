@@ -14,23 +14,34 @@ import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
+import android.widget.AutoCompleteTextView
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
+import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
 
-    val APP_PREFERENCES = "mysettings"
-    val APP_PREFERENCES_COUNTER = "counter"
-    lateinit var pref: SharedPreferences
+
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        pref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE)
+
     }
     
+
+    fun donateClick(view: View){
+
+        val wallet: AutoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.wallet)
+        val supportBtn: TextView = findViewById<TextView>(R.id.support)
+
+        supportBtn.isInvisible = true;
+        wallet.isVisible = true;
+
+    }
 
     fun countString (view: View){
 
@@ -41,6 +52,14 @@ class MainActivity : AppCompatActivity() {
         count++
 
         counter.text = count.toString()
+
+        val wallet: AutoCompleteTextView = findViewById(R.id.wallet)
+        val supportBtn: TextView = findViewById(R.id.support)
+
+        if(wallet.isVisible){
+            wallet.isInvisible = true;
+            supportBtn.isVisible = true;
+        }
 
     }
 
@@ -59,16 +78,6 @@ class MainActivity : AppCompatActivity() {
 
         counter.text = savedInstanceState.getString("KEY")
 
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        val editor = pref.edit()
-        val countString = counter.text.toString()
-        var count: Int = Integer.parseInt(countString)
-        editor.putInt(APP_PREFERENCES_COUNTER, count)
-        editor.apply()
     }
 
 
