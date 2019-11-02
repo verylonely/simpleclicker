@@ -15,6 +15,7 @@ import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import org.w3c.dom.Text
@@ -31,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
-    
 
     fun donateClick(view: View){
 
