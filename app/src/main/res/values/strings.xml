@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Simple Clicker</string>
-    <string name="btcwallet">BTC: 15yTez9naJPRm55pqHguikhgs3KDhXLZsC</string>
+    <string name="btcwallet" translatable="false">BTC: 15yTez9naJPRm55pqHguikhgs3KDhXLZsC</string>
+    <string name="donate">Donate</string>
+    <string name="darktheme">Dark Theme</string>
+    <string name="restartapp">Please restart app</string>
 </resources>

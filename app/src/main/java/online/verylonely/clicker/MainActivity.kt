@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.AutoCompleteTextView
 import android.widget.Button
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import org.w3c.dom.Text
@@ -23,13 +24,35 @@ import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
+    fun loadTheme(){
+        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        val theme = pref.getBoolean("checked", false)
 
+            if(theme == true)
+                setTheme(R.style.DarkTheme)
+            else
+                setTheme(R.style.AppTheme)
+    }
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
+        loadTheme()
         setContentView(R.layout.activity_main)
+        loadState()
+        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        darkthemeSwitch.isChecked = pref.getBoolean("checked", false)
+
+        darkthemeSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked)
+                saveTheme(true)
+            else
+                saveTheme(false)
+            Toast.makeText(this, R.string.restartapp, Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -52,6 +75,8 @@ class MainActivity : AppCompatActivity() {
         count++
 
         counter.text = count.toString()
+
+        saveState()
 
         val wallet: AutoCompleteTextView = findViewById(R.id.wallet)
         val supportBtn: TextView = findViewById(R.id.support)
@@ -78,6 +103,26 @@ class MainActivity : AppCompatActivity() {
 
         counter.text = savedInstanceState.getString("KEY")
 
+    }
+
+    private fun saveState(){
+        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.putString("counter", counter.text.toString())
+        editor.apply()
+    }
+
+    private fun loadState(){
+        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        val ctr = pref.getString("counter", "0")
+        counter.setText(ctr.toString())
+    }
+
+    private fun saveTheme(boolean: Boolean){
+        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.putBoolean("checked", boolean)
+        editor.apply()
     }
 
 
