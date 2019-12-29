@@ -61,8 +61,8 @@ class MainActivity : AppCompatActivity() {
         val wallet: AutoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.wallet)
         val supportBtn: TextView = findViewById<TextView>(R.id.support)
 
-        supportBtn.isInvisible = true;
-        wallet.isVisible = true;
+        supportBtn.isInvisible = true
+        wallet.isVisible = true
 
     }
 
@@ -82,28 +82,28 @@ class MainActivity : AppCompatActivity() {
         val supportBtn: TextView = findViewById(R.id.support)
 
         if(wallet.isVisible){
-            wallet.isInvisible = true;
-            supportBtn.isVisible = true;
+            wallet.isInvisible = true
+            supportBtn.isVisible = true
         }
 
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-
-        outState.run {
-            putString("KEY", counter.text.toString())
-        }
-
-        super.onSaveInstanceState(outState)
-
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-
-        counter.text = savedInstanceState.getString("KEY")
-
-    }
+//    override fun onSaveInstanceState(outState: Bundle) {
+//
+//        outState.run {
+//            putString("KEY", counter.text.toString())
+//        }
+//
+//        super.onSaveInstanceState(outState)
+//
+//    }
+//
+//    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+//        super.onRestoreInstanceState(savedInstanceState)
+//
+//        counter.text = savedInstanceState.getString("KEY")
+//
+//    }
 
     private fun saveState(){
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadState(){
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
         val ctr = pref.getString("counter", "0")
-        counter.setText(ctr.toString())
+        counter.text = ctr.toString()
     }
 
     private fun saveTheme(boolean: Boolean){
