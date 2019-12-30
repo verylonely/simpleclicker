@@ -15,12 +15,19 @@
             android:textSize="50sp"
             android:textAlignment="center"
             android:text="0"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
         <Switch
-
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
+            android:layout_margin="30dp"
             android:layout_height="wrap_content"
             android:text="@string/darktheme"
             android:textColor="?attr/textColor"/>
-    </LinearLayout>
 
+    </LinearLayout>
 </FrameLayout>
