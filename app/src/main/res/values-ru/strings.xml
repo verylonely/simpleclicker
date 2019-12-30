@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Clicker</string>
-    <string name="donate">Поддержать</string>
     <string name="darktheme">Тёмная тема</string>
     <string name="restartapp">Перезапустите приложение</string>
 </resources>
