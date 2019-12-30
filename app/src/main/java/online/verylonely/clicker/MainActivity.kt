@@ -19,6 +19,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.new_current.*
 import org.w3c.dom.Text
 
 
@@ -56,15 +57,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun donateClick(view: View){
-
-        val wallet: AutoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.wallet)
-        val supportBtn: TextView = findViewById<TextView>(R.id.support)
-
-        supportBtn.isInvisible = true
-        wallet.isVisible = true
-
-    }
+//    fun donateClick(view: View){
+//
+//        val wallet: AutoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.wallet)
+//        val supportBtn: TextView = findViewById<TextView>(R.id.support)
+//
+//        supportBtn.isInvisible = true
+//        wallet.isVisible = true
+//
+//    }
 
     fun countString (view: View){
 
@@ -78,13 +79,13 @@ class MainActivity : AppCompatActivity() {
 
         saveState()
 
-        val wallet: AutoCompleteTextView = findViewById(R.id.wallet)
-        val supportBtn: TextView = findViewById(R.id.support)
-
-        if(wallet.isVisible){
-            wallet.isInvisible = true
-            supportBtn.isVisible = true
-        }
+//        val wallet: AutoCompleteTextView = findViewById(R.id.wallet)
+//        val supportBtn: TextView = findViewById(R.id.support)
+//
+//        if(wallet.isVisible){
+//            wallet.isInvisible = true
+//            supportBtn.isVisible = true
+//        }
 
     }
 

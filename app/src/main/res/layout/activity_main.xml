@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/counter"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
@@ -32,7 +32,7 @@
         android:layout_marginTop="58dp"
         android:layout_marginEnd="183dp"
         android:layout_marginBottom="253dp"
-        android:onClick="donateClick"
+
         android:text="@string/donate"
         android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/counter"
@@ -65,7 +65,7 @@
         android:text="@string/darktheme"
         android:textColor="?attr/textColor"
         android:visibility="visible"
-        android:id="@+id/darkthemeSwitch"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="187dp"
