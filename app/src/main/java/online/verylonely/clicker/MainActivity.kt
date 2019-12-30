@@ -3,6 +3,7 @@ package online.verylonely.clicker
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.new_current.*
@@ -12,12 +13,14 @@ class MainActivity : AppCompatActivity() {
 
     fun loadTheme(){
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
-        val dark_theme = pref.getBoolean("checked", false)
+        val theme = pref.getInt("theme", 0)
 
-            if(dark_theme)
-                setTheme(R.style.DarkTheme)
-            else
+            if(theme == 0)
                 setTheme(R.style.AppTheme)
+            if(theme == 2)
+                setTheme(R.style.DarkTheme)
+            if(theme == 1)
+                setTheme(R.style.WhiteTheme)
     }
 
 
@@ -29,16 +32,14 @@ class MainActivity : AppCompatActivity() {
         loadTheme()
         setContentView(R.layout.new_current)
         loadState()
-        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
-        darkthemeSwitch.isChecked = pref.getBoolean("checked", false)
+        var blue: Button = findViewById(R.id.blue)
+        var white: Button = findViewById(R.id.white)
+        var dark: Button = findViewById(R.id.dark)
 
-        darkthemeSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked)
-                saveTheme(true)
-            else
-                saveTheme(false)
-            Toast.makeText(this, R.string.restartapp, Toast.LENGTH_SHORT).show()
-        }
+        blue.setOnClickListener { saveTheme(0) }
+        white.setOnClickListener { saveTheme(1) }
+        dark.setOnClickListener { saveTheme(2) }
+
 
     }
 
@@ -71,11 +72,13 @@ class MainActivity : AppCompatActivity() {
         counter.text = ctr.toString()
     }
 
-    private fun saveTheme(boolean: Boolean){
+    private fun saveTheme(int: Int){
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
         val editor = pref.edit()
-        editor.putBoolean("checked", boolean)
+        editor.putInt("theme", int)
         editor.apply()
+
+        Toast.makeText(this, R.string.restartapp, Toast.LENGTH_LONG).show()
     }
 
 

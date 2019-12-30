@@ -26,14 +26,17 @@
         android:gravity="center"
         android:layout_margin="30dp">
         <Button
+            android:id="@+id/white"
             android:layout_width="wrap_content"
             android:background="@color/white"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/blue"
             android:layout_width="wrap_content"
             android:background="@color/blue"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/dark"
             android:layout_width="wrap_content"
             android:background="@color/dark"
             android:layout_height="wrap_content" />
