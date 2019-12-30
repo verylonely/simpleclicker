@@ -1,26 +1,11 @@
 package online.verylonely.clicker
 
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
-import android.R.id.edit
-import android.content.Context
-import android.content.SharedPreferences.Editor
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.new_current.*
-import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
