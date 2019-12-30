@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="textColor">@color/textColor</item>
     </style>
+    <style name="WhiteTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="backgroundColor">@color/colorPrimaryWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkWhite</item>
+        <item name="colorAccent">@color/colorAccentWhite</item>
+        <item name="textColor">@color/textColorBlack</item>
+    </style>
     <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="backgroundColor">@color/colorPrimaryDarkTheme</item>

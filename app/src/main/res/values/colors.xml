@@ -4,10 +4,15 @@
     <color name="colorPrimaryDark">#BA03A9F4</color>
     <color name="colorAccent">#BA03A9F4</color>
 
+    <color name="colorPrimaryWhite">#BAFFFFFF</color>
+    <color name="colorPrimaryDarkWhite">#BAFCFCFC</color>
+    <color name="colorAccentWhite">#BAFFFFFF</color>
+
     <color name="colorPrimaryDarkTheme">#252525</color>
     <color name="colorPrimaryDarkThemeAccent">#3C3C3C</color>
 
     <color name="textColor">#FFFFFF</color>
+    <color name="textColorBlack">#303030</color>
     <color name="textColorDarkTheme">#D6D6D6</color>
 
 </resources>
