@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         editor.putInt("theme", int)
         editor.apply()
 
-        Toast.makeText(this, R.string.restartapp, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, R.string.restartapp, Toast.LENGTH_SHORT).show()
     }
 
 
