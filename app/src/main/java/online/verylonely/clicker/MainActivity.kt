@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         loadTheme()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.new_current)
         loadState()
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
         darkthemeSwitch.isChecked = pref.getBoolean("checked", false)
