@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
 
     fun loadTheme(){
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
-        val theme = pref.getBoolean("checked", false)
+        val dark_theme = pref.getBoolean("checked", false)
 
-            if(theme == true)
+            if(dark_theme)
                 setTheme(R.style.DarkTheme)
             else
                 setTheme(R.style.AppTheme)
