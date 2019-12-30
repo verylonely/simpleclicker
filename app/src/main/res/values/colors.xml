@@ -11,8 +11,13 @@
     <color name="colorPrimaryDarkTheme">#252525</color>
     <color name="colorPrimaryDarkThemeAccent">#3C3C3C</color>
 
-    <color name="textColor">#FFFFFF</color>
+    <color name="textColor">#ECECEC</color>
     <color name="textColorBlack">#303030</color>
     <color name="textColorDarkTheme">#D6D6D6</color>
+
+
+    <color name="dark">#252525</color>
+    <color name="blue">#BA03A9F4</color>
+    <color name="white">#ECECEC</color>
 
 </resources>
