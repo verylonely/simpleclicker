@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Simple Clicker</string>
-    <string name="darktheme">Dark Theme</string>
+    <string name="themes">Themes</string>
     <string name="restartapp">Please restart app</string>
 </resources>
