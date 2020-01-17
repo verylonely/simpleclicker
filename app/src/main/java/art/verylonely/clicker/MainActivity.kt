@@ -1,4 +1,4 @@
-package online.verylonely.clicker
+package art.verylonely.clicker
 
 import android.content.Context
 import android.os.Bundle

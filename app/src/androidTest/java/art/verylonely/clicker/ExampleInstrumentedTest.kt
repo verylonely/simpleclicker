@@ -1,4 +1,4 @@
-package online.verylonely.clicker
+package art.verylonely.clicker
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("online.verylonely.clicker", appContext.packageName)
+        assertEquals("art.verylonely.clicker", appContext.packageName)
     }
 }
