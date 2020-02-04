@@ -1,6 +1,7 @@
 package art.verylonely.clicker
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -29,6 +30,11 @@ class MainActivity : AppCompatActivity() {
         loadTheme()
         setContentView(R.layout.new_current)
         loadState()
+
+        val face: Typeface = Typeface.createFromAsset(assets, "fonts/pixel_font.ttf")
+        counter.setTypeface(face)
+        darkthemeSwitch.setTypeface(face)
+
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
         darkthemeSwitch.isChecked = pref.getBoolean("checked", false)
 
