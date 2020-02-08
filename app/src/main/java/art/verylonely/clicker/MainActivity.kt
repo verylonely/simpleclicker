@@ -11,16 +11,6 @@ import kotlinx.android.synthetic.main.new_current.*
 
 class MainActivity : AppCompatActivity() {
 
-    fun loadTheme(){
-        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
-        val dark_theme = pref.getBoolean("checked", false)
-
-            if(dark_theme)
-                setTheme(R.style.DarkTheme)
-            else
-                setTheme(R.style.AppTheme)
-    }
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         val face: Typeface = Typeface.createFromAsset(assets, "fonts/pixel_font.ttf")
         counter.setTypeface(face)
         darkthemeSwitch.setTypeface(face)
+
+        background.setOnClickListener { countString() }
 
         val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
         darkthemeSwitch.isChecked = pref.getBoolean("checked", false)
@@ -49,12 +41,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun countString (view: View){
+    fun countString (){
 
 
-        val countString = counter.text.toString()
+        var count: Int = Integer.parseInt(counter.text.toString())
 
-        var count: Int = Integer.parseInt(countString)
         count++
 
         counter.text = count.toString()
